@@ -1,0 +1,12 @@
+#uneaten {
+    border-right: 1px solid #666;
+    height: 80vh;
+}
+#eaten {
+    border-left: 1px solid #666;
+    height: 80vh;
+}
+
+li:hover {
+    background: #f4f4f4;
+}

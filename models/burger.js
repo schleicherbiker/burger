@@ -1,7 +1,17 @@
 const express = require("express");
 const orm = require("../config/orm.js");
-// TODO create router;
-const router;
 
-
-module.exports = router;
+const burger = {
+    all: (cb) => {
+        orm.selectAll("burgers", function(res) {
+            cb(res);
+        })
+    },
+    
+    create: (cols, vals, cb) => {
+    orm.insertOne("burgers", cols, vals, function(res) {
+      cb(res);
+    });
+  }
+}
+module.exports = burger;

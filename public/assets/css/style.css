@@ -1,12 +1,85 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}
+
+ ul {
+    list-style-type: none;
+ }
+
+#sectionTitle {
+    font-size: 2.5vw;
+    border-bottom: 1px solid black;
+    padding-bottom: 1vw;
+    margin: 1vw -15px 1vw -15px;
+}
+
 #uneaten {
+    margin-right: -15px;
     border-right: 1px solid #666;
     height: 80vh;
 }
 #eaten {
-    border-left: 1px solid #666;
-    height: 80vh;
+    margin-left: -16px;
+    border-left: 1px solid black;
+    height: 100%;
 }
 
-li:hover {
-    background: #f4f4f4;
+li {
+    padding: 1vh;
+}
+
+#title {
+    font-style: bold;
+    font-size: 48px;
+    background: rgba(0, 0, 0, 0.5);
+    color:#ddd;
+    padding: 2vw 0 2vw 0;
+    margin: 0;
+}
+
+#addBurger {
+    background: rgba(0, 0, 0, 0.3); 
+    padding: 1vw 0 1vw 0;
+    color: #ddd;
+}
+
+#addBurgerBtn {
+    background: white;
+    border: 2px solid white;
+    color: black;
+}
+
+#addBurgerBtn:hover {
+    background: #aaa;
+    border-color: #aaa;
+}
+
+#addBurgerForm {
+    margin-right: -4px;
+    height: 26px;
+    border: 0;
+    border-right: 1px solid black;
+    padding-left: 4px;
+}
+
+#addBurgerForm:focus {
+    outline: none;
+}
+
+#addBurgerTitle {
+    margin: 0;
+    padding-bottom: 1vw;
+    color: #ddd;
+}
+
+#eatMeBtn {
+    background: white;
+    border: 0;
+    padding: .5vw 1vw .5vw 1vw;
+    font-size: 2vw;
+}
+
+#eatMeBtn:hover {
+    background: rgba(255, 255, 255, 0);
 }

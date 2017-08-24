@@ -6,7 +6,7 @@ const exphbs = require("express-handlebars");
 
 // Make Server
 const app = express();
-app.set('port', process.env.port || process.argv[2] || 3000);
+app.set('port', process.env.PORT || 8080);
 
 // Middleware
 app.use(express.static("public"));

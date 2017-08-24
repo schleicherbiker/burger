@@ -4,7 +4,7 @@ const burger = require("../models/burger.js");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    burger.all(function(data) {
+    burger.all((data) => {
         res.render("index", { burgers: data})  
     })
 });
@@ -20,15 +20,15 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  var condition = "id = " + req.params.id;
+    const condition = "id=" + req.params.id;
 
-  console.log("condition", condition);
-
-  cat.update({
-    sleepy: req.body.sleepy
-  }, condition, function() {
-    res.redirect("/");
-  });
+    burger.update(
+        {devoured: req.body.devoured}, 
+        condition,
+        () => {
+            res.redirect("/");
+        }
+    );
 });
 
 module.exports = router;

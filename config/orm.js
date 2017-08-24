@@ -11,18 +11,29 @@ module.exports = {
     
     insertOne: (tableName, colNames, colValues, cb) => {
         const queryString = "INSERT INTO " + tableName + " (" + (colNames.join(", ")) + ") VALUES(" + colValues.join(", ") + ")";
-        console.log(queryString);
         connection.query(queryString, (err, res) => {
             if (err) throw err;
             cb(res);
         })
     },
-    updateOne: (tableName, updateCol, updateVal, colName, colVal) => {
-        const queryString = "UPDATE ? SET ? = ? WHERE ? = ?";
-        connection.query(queryString, [tableName, updateCol, updateVal, colName, colVal], (err, res) => {
+    updateOne: (tableName, objColVals, condition, cb) => {
+        const queryString = "UPDATE " + tableName + " SET " + objToSql(objColVals) + " WHERE " + condition;
+        console.log(queryString);
+        connection.query(queryString, (err, res) => {
             if (err) throw err;
-            console.log(res);
-            return res;
+            cb(res);
         })
     }
+}
+
+function objToSql(ob) {
+  var arr = [];
+
+  for (var key in ob) {
+    if (Object.hasOwnProperty.call(ob, key)) {
+      arr.push(key + "=" + ob[key]);
+    }
+  }
+
+  return arr.toString();
 }

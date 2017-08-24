@@ -61,6 +61,7 @@ li {
     border: 0;
     border-right: 1px solid black;
     padding-left: 4px;
+    color: black;
 }
 
 #addBurgerForm:focus {
